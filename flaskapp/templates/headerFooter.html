@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{% if title %} {{title}} {%else %} qpgen : Home {% endif%}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+      shrink-to-fit=no" />
+  <link rel="shortcut icon" href='{{ url_for("static" ,filename="images/rvlogo" ) }}' type="image/x-icon">
+  <script src="https://browser.sentry-cdn.com/5.15.4/bundle.min.js"
+    integrity="sha384-Nrg+xiw+qRl3grVrxJtWazjeZmUwoSt0FAVsbthlJ5OMpx0G08bqIq3b/v0hPjhB" crossorigin="anonymous">
+  </script>
+  <script>
+    Sentry.init({
+      dsn: "https://c9335936f879448e8ba64f062636caaf@o374456.ingest.sentry.io/5192852",
+    });
+  </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+
+  <link rel=“stylesheet” href=“https://use.fontawesome.com/releases/v5.5.0/css/all.css”
+    integrity=“sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU” crossorigin=“anonymous”>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',
+      filename='css/headerFooter.css') }}"/>
+    {% for css_file in css_files %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',
+      filename=css_file) }}"/>
+    {% endfor %}
+    {% block links %} {% endblock links %}
+</head>
+
+<body>
+  <script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings = 
+            {"appId":"1accbef9fb4659e5f106814b7d6f08011","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
+  {%block loader %} {%endblock loader %} {%block backgroundImage %} {%endblock
+    backgroundImage %}
+  <div id="opacity_container">
+    {% block flashes %} {% endblock flashes %}
+  </div>
+  <div id="header_footer">
+    <header>
+      <div class="row px-4 py-2 text-white sticky-top" id="header">
+        <div id="bars_container"><i class="fa fa-bars"></i></div>
+        <div class="col1">
+          
+          <a href="/"><img src="{{ url_for('static',
+            filename='images/rvlogo.svg') }}" class="logo" alt="logo" id="logo" />
+      </a>
+        </div>
+        <div class="col2">
+          <h2>RVCE</h2>
+          <h4>Question Paper Generator</h4>
+        </div>
+        <div class="col3">
+          <div class="row">
+            {% block general_top_links %}
+            {% endblock general_top_links %}
+          </div>
+        </div>
+        {%block top_profile%}
+        {%endblock top_profile%}
+        <div id="side_navigation_container">
+          <div id="logo_container">
+            <div class="col1">
+              <a href="/">
+                
+                <img src="{{ url_for('static',
+                    filename='images/rvlogo') }}" class="logo" alt="logo" />
+              </a>
+            </div>
+
+            <div class="col2">
+              <h2>RVCE</h2>
+              <h4>Question Paper Generator</h4>
+            </div>
+            {%block side_profile %}
+            {%endblock side_profile %}
+          </div>
+          <div id="side_navigation_items_container">
+            {%block general_side_links%}
+            {%endblock general_side_links%}
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="page_container">
+      <div id="main_container">
+        {%block body %} {%endblock body%}
+      </div>
+  
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/84a8728d56.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+  <script type="text/javascript" src="{{ url_for('static',
+      filename='js/headerFooter.js') }}" defer="defer"></script>
+{% block general_scripts %}
+{% endblock general_scripts %}
+{% for js_file in js_files %}
+    <script type="text/javascript" src="{{ url_for('static',
+      filename=js_file) }}" defer="defer"></script>
+{% endfor %} {% block script %} {% endblock script %}
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+{% extends "main/general.html" %} {% block main %}
+<div class="row m-5 mb-2" id="page_title">
+    <div class="col">
+        <h2>About Us</h2>
+    </div>
+</div>
+
+<div class="container pt-1" id="wrapper">
+    <div class="row p-2">
+        <img src="{{ url_for('static',
+            filename='images/about_us.svg') }}" class="about_logo" alt="Image" />
+    </div>
+
+    <div class="row p-2" id="about_content">
+        <p>
+            Welcome to RVCE's very own question paper generator. Here, we intake questions from the college faculty and store it in our databse.
+            We give several options for how the paper needs to be generated. once done, the faculty can easily generate and download question
+            papers via our website.
+        </p>
+        <p>
+            We hope you enjoy our products as much as we enjoy offering them to you.
+            If you have any questions or comments, please don't hesitate to contact
+            us.
+        </p>
+    </div>
+
+    <h3 class="py-3" id="team_title">Our Team</h3>
+
+    <div class="row p-2" id="team">
+        <div class="m-2 team_card">
+            <div class="row m_name">
+                <p class="m-2">Riya kaur[1RV20IS039]</p>
+            </div>
+            <div class="row p-2 m_speciality">
+                <div class="col-1 px-1"><i class="fas fa-code"></i></div>
+                <div class="col">developer, Project manager</div>
+            </div>
+        </div>
+
+        <div class="m-2 team_card">
+            <div class="row m_name">
+                <p class="m-2">Sangya Medhavi shree goyal [1RV20IS042]</p>
+            </div>
+            <div class="row p-2 m_speciality">
+                <div class="col-1 px-1"><i class="fas fa-desktop"></i></div>
+                <div class="col">developer, project manager</div>
+            </div>
+        </div>
+
+{% endblock main %}
